@@ -2,12 +2,17 @@
 
 import pickle
 import sys
+import os
 
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
 from azureml_sdk import data_collector
 
+# initialize the logger
 run_logger = data_collector.current_run() 
+
+# create the outputs folder
+os.makedirs('./outputs', exist_ok=True)
 
 print ('Python version: {}'.format(sys.version))
 print ()
