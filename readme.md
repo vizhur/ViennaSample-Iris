@@ -1,7 +1,8 @@
 # Classifying Iris
 
-Run iris_sklearn.py in local conda environment.
+Run iris_sklearn.py in local environment.
 ```
+$ conda install scikit-learn
 $ az ml execute start -c local iris_sklearn.py
 ```
 
