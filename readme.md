@@ -18,12 +18,12 @@ $ az ml computecontext attach --name <myvm> --address <ip address or FQDN> --use
 
 Run iris_pyspark.py in a Docker container (with Spark) in a remote VM:
 ```
-$az ml execute start -c myvm iris_pyspark.py
+$ az ml execute start -c myvm iris_pyspark.py
 ```
 
 Create myhdi.compute to point to an HDI cluster
 ```
-az ml computecontext attach --name <myhdi> --address <ip address or FQDN of the head node> --username <username> --password <pwd> --cluster
+$ az ml computecontext attach --name <myhdi> --address <ip address or FQDN of the head node> --username <username> --password <pwd> --cluster
 ```
 
 Run it in a remote HDInsight cluster:
