@@ -11,7 +11,7 @@ Run iris_sklearn.py in a local Docker container.
 $ az ml execute start -c docker iris_sklearn.py
 ```
 
-Create myvm.compute file to point to a remove VM
+Create myvm.compute file to point to a remote VM
 ```
 $ az ml computecontext attach --name <myvm> --address <ip address or FQDN> --username <username> --password <pwd>
 ```
