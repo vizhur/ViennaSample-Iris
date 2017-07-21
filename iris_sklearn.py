@@ -6,7 +6,7 @@ import os
 
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
-from azureml_sdk import data_collector
+from azureml.sdk import data_collector
 
 # initialize the logger
 run_logger = data_collector.current_run() 
