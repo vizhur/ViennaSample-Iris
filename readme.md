@@ -2,17 +2,17 @@
 
 <img src="./images/cover.png" align="left" style="margin-right:10px">
 
-This is a companion sample project with the Iris tutorial that you can find from the main GitHub documentation site of Project "Vienna". Using the timeless [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set), it walks you through the basics of Project "Vienna". 
+This is a companion sample project of the Iris tutorial that you can find from the main GitHub documentation site of Project "Vienna". Using the timeless [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set), it walks you through the basics of Project "Vienna". 
 
-- [Documentation site](https://github.com/Azure/ViennaDocs/blob/master/Documentation/Tutorial.md) for Microsoft internal employees.
+- [Documentation site](https://github.com/Azure/ViennaDocs/blob/master/Documentation/Tutorial.md) for Microsoft internal dogfooders.
 - [Documentation site](https://github.com/AzureMachineLearning/Project-Vienna-Private-Preview/blob/master/Documentation/Tutorial.md) for external private preview customers.
 
 Enjoy!
 
 ## Quick CLI references
-If you want to try quickly from the command line launched from the _File_ menu:
+If you want to try quickly from the command line window launched from the _File_ menu:
 
-Kick-off many runs to observe the metrics emitted by each run in a graph.
+Kick-off many local runs to observe the metrics emitted by each run in a graph.
 ```
 $ python run.py
 ```
