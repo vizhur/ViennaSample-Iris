@@ -1,26 +1,43 @@
 # Classifying Iris
 
-Run iris_sklearn.py in local environment.
+<img src="./images/cover.png" align="left" style="margin-right:10px">
+
+This is a companion sample project with the Iris tutorial that you can find from the main GitHub documentation site of Project "Vienna". Using the timeless [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set), it walks you through the basics of Project "Vienna". 
+
+- [Documentation site](https://github.com/Azure/ViennaDocs/blob/master/Documentation/Tutorial.md) for Microsoft internal employees.
+- [Documentation site](https://github.com/AzureMachineLearning/Project-Vienna-Private-Preview/blob/master/Documentation/Tutorial.md) for external private preview customers.
+
+Enjoy!
+
+## Quick CLI references
+If you want to try quickly from the command line launched from the _File_ menu:
+
+Kick-off many runs to observe the metrics emitted by each run in a graph.
+```
+$ python run.py
+```
+
+Run _iris_sklearn.py_ in local environment.
 ```
 $ az ml execute start -c local iris_sklearn.py
 ```
 
-Run iris_sklearn.py in a local Docker container.
+Run _iris_sklearn.py_ in a local Docker container.
 ```
 $ az ml execute start -c docker iris_sklearn.py
 ```
 
-Create myvm.compute file to point to a remote VM
+Create _myvm.compute_ file to point to a remote VM
 ```
 $ az ml computecontext attach --name <myvm> --address <ip address or FQDN> --username <username> --password <pwd>
 ```
 
-Run iris_pyspark.py in a Docker container (with Spark) in a remote VM:
+Run _iris_pyspark.py_ in a Docker container (with Spark) in a remote VM:
 ```
 $ az ml execute start -c myvm iris_pyspark.py
 ```
 
-Create myhdi.compute to point to an HDI cluster
+Create _myhdi.compute_ to point to an HDI cluster
 ```
 $ az ml computecontext attach --name <myhdi> --address <ip address or FQDN of the head node> --username <username> --password <pwd> --cluster
 ```
