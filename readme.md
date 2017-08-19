@@ -46,4 +46,3 @@ Run it in a remote HDInsight cluster:
 ```
 $ az ml execute start -c myhdi iris_pyspark.py
 ```
-For more details on configuring execution targets, go to: http://aka.ms/vienna-docs-exec
