@@ -70,7 +70,7 @@ print('Predicted class is {}'.format(pred))
 
 print("")
 print("==========================================")
-print("Serialize and deserialize from the native share {0} folder.".format(os.environ['AZUREML_NATIVE_SHARE_DIRECTORY']))
+print("Serialize and deserialize from the native share folder: {0}".format(os.environ['AZUREML_NATIVE_SHARE_DIRECTORY']))
 print("")
 
 # serialize the model on disk in the private share folder. 
