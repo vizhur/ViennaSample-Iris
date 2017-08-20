@@ -2,7 +2,7 @@
 
 ![cover](./images/cover.png)
 
-This is a companion sample project of the Iris tutorial that you can find from the main GitHub documentation site of Project "Vienna". Using the timeless [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set), it walks you through the basics of Project "Vienna". 
+This is a companion sample project of the Iris tutorial that you can find from the main GitHub documentation site of Project "Vienna". Using the timeless [iris flower dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set), it walks you through the basics of Project "Vienna". 
 
 - [Documentation site](https://github.com/Azure/ViennaDocs/blob/master/Documentation/Tutorial.md) for Microsoft internal dogfooders.
 - [Documentation site](https://github.com/AzureMachineLearning/Project-Vienna-Private-Preview/blob/master/Documentation/Tutorial.md) for external private preview customers.
