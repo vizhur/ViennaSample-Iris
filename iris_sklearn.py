@@ -25,19 +25,22 @@ os.makedirs('./outputs', exist_ok=True)
 print('Python version: {}'.format(sys.version))
 print()
 
-# load Iris dataset
+# load Iris dataset from a DataPrep package
 iris = run('iris.dprep', dataflow_idx=0)
 print ('Iris dataset shape: {}'.format(iris.shape))
 
-
 # load features and labels
 X, Y = iris[['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']].values, iris['Species'].values
+
+# do a random shuffle
 X, Y = shuffle(X, Y)
-X_train, Y_train = X[:-30,:], Y[:-30]
-X_test, Y_test = X[-30:,:], Y[-30:]
+
+# use 100 samples as training data, and 50 samples as test data
+X_train, Y_train = X[:-50,:], Y[:-50]
+X_test, Y_test = X[-50:,:], Y[-50:]
 
 # change regularization rate and you will likely get a different accuracy.
-reg = 0.01
+reg = 0.1
 # load regularization rate from argument if present
 if len(sys.argv) > 1:
     reg = float(sys.argv[1])
@@ -47,11 +50,12 @@ print("Regularization rate is {}".format(reg))
 # log the regularization rate
 run_logger.log("Regularization Rate", reg)
 
-# train a logistic regression model
-clf1 = LogisticRegression(C=1/reg).fit(X, Y)
+# train a logistic regression model on the training set
+clf1 = LogisticRegression(C=1/reg).fit(X_train, Y_train)
 print (clf1)
 
-accuracy = clf1.score(X, Y)
+# evaluate the test set
+accuracy = clf1.score(X_test, Y_test)
 print ("Accuracy is {}".format(accuracy))
 
 # log accuracy
@@ -73,16 +77,22 @@ print("Import the model from model.pkl")
 f2 = open('./outputs/model.pkl', 'rb')
 clf2 = pickle.load(f2)
 
-# predict a new sample
+# predict on a new sample
 X_new = [[3.0, 3.6, 1.3, 0.25]]
 print ('New sample: {}'.format(X_new))
 pred = clf2.predict(X_new)
 print('Predicted class is {}'.format(pred))
 
+# score the entire test set
+Y_hat = clf1.predict(X)
 
-Y_hat = clf1.predict(X_test)
+# create a confusion matrix
 labels = ['Iris-virginica', 'Iris-versicolor', 'Iris-setosa']
-cm = confusion_matrix(Y_test, Y_hat, labels)
+cm = confusion_matrix(Y, Y_hat, labels)
+
+# plot the confusion matrix
+print("Plot the confusion matrix:")
+print(cm)
 
 fig = plt.figure(figsize=(6,4), dpi=75)
 plt.imshow(cm, interpolation="nearest", cmap=plt.cm.Reds)
@@ -93,3 +103,5 @@ plt.yticks(tick_marks, labels)
 plt.xlabel("Predicted Species")
 plt.ylabel("True Species")
 fig.savefig('./outputs/cm.png', bbox_inches='tight')
+
+print("Confusion matrix saved in an image file. Please check Run History details page.")
