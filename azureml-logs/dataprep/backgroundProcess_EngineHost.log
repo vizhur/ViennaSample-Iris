@@ -1,0 +1,10 @@
+2017-08-25 10:27:52.5783|DEBUG|EngineHost|Startup|MessageParser initialized|93b047ba-89a1-11e7-9c7b-3417ebb653bd
+2017-08-25 10:27:52.5963|DEBUG|EngineHost|Startup|MessageLoop initialized|93b047ba-89a1-11e7-9c7b-3417ebb653bd
+2017-08-25 10:28:20.0771|DEBUG|EngineHost|Startup|MessageParser initialized|a4207978-89a1-11e7-89f9-3417ebb653bd
+2017-08-25 10:28:20.0881|DEBUG|EngineHost|Startup|MessageLoop initialized|a4207978-89a1-11e7-89f9-3417ebb653bd
+2017-08-25 10:28:59.0747|DEBUG|EngineHost|Startup|MessageParser initialized|bb4f6e52-89a1-11e7-b939-3417ebb653bd
+2017-08-25 10:28:59.0897|DEBUG|EngineHost|Startup|MessageLoop initialized|bb4f6e52-89a1-11e7-b939-3417ebb653bd
+2017-08-25 10:33:00.0891|DEBUG|EngineHost|Startup|MessageParser initialized|4afc46d8-89a2-11e7-9a4f-3417ebb653bd
+2017-08-25 10:33:00.1051|DEBUG|EngineHost|Startup|MessageLoop initialized|4afc46d8-89a2-11e7-9a4f-3417ebb653bd
+2017-08-25 12:05:25.5894|DEBUG|EngineHost|Startup|MessageParser initialized|345d3490-89af-11e7-86fe-3417ebb653bd
+2017-08-25 12:05:25.5894|DEBUG|EngineHost|Startup|MessageLoop initialized|345d3490-89af-11e7-86fe-3417ebb653bd

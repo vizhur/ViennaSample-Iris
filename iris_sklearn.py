@@ -1,12 +1,20 @@
 # Please make sure scikit-learn is included the conda_dependencies.yml file.
-
 import pickle
 import sys
 import os
 
-from sklearn.datasets import load_iris
+import matplotlib
+matplotlib.use('agg')
+import matplotlib.pyplot as plt
+
+import numpy as np
+from sklearn.metrics import confusion_matrix
+
 from sklearn.linear_model import LogisticRegression
+from sklearn.utils import shuffle
+
 from azureml.sdk import data_collector
+from azureml.dataprep.package import run
 
 # initialize the logger
 run_logger = data_collector.current_run() 
@@ -14,15 +22,19 @@ run_logger = data_collector.current_run()
 # create the outputs folder
 os.makedirs('./outputs', exist_ok=True)
 
-print ('Python version: {}'.format(sys.version))
-print ()
+print('Python version: {}'.format(sys.version))
+print()
 
 # load Iris dataset
-iris = load_iris()
-print ('Iris dataset shape: {}'.format(iris.data.shape))
+iris = run('iris.dprep', dataflow_idx=0)
+print ('Iris dataset shape: {}'.format(iris.shape))
+
 
 # load features and labels
-X, Y = iris.data, iris.target
+X, Y = iris[['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']].values, iris['Species'].values
+X, Y = shuffle(X, Y)
+X_train, Y_train = X[:-30,:], Y[:-30]
+X_test, Y_test = X[-30:,:], Y[-30:]
 
 # change regularization rate and you will likely get a different accuracy.
 reg = 0.01
@@ -66,3 +78,18 @@ X_new = [[3.0, 3.6, 1.3, 0.25]]
 print ('New sample: {}'.format(X_new))
 pred = clf2.predict(X_new)
 print('Predicted class is {}'.format(pred))
+
+
+Y_hat = clf1.predict(X_test)
+labels = ['Iris-virginica', 'Iris-versicolor', 'Iris-setosa']
+cm = confusion_matrix(Y_test, Y_hat, labels)
+
+fig = plt.figure(figsize=(6,4), dpi=75)
+plt.imshow(cm, interpolation="nearest", cmap=plt.cm.Reds)
+plt.colorbar()
+tick_marks = np.arange(len(labels))
+plt.xticks(tick_marks, labels, rotation=45)
+plt.yticks(tick_marks, labels)
+plt.xlabel("Predicted Species")
+plt.ylabel("True Species")
+fig.savefig('./outputs/cm.png', bbox_inches='tight')

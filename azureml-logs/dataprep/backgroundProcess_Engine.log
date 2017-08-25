@@ -1,0 +1,16 @@
+2017-08-25 10:27:52.6425|DEBUG|Engine|ProjectManagement|Reading the project from: C:\tmp\Iris_gold\iris.dprep|93b047ba-89a1-11e7-9c7b-3417ebb653bd
+2017-08-25 10:27:52.8855|DEBUG|Engine|ProjectManagement|Successfully read the project from: C:\tmp\Iris_gold\iris.dprep|93b047ba-89a1-11e7-9c7b-3417ebb653bd
+2017-08-25 10:27:52.9305|DEBUG|Engine|ProjectManagement|Deleting recovery files: C:\tmp\Iris_gold\iris.dprep.tmp, C:\tmp\Iris_gold\iris.dprep.user.tmp|93b047ba-89a1-11e7-9c7b-3417ebb653bd
+2017-08-25 10:28:20.1322|DEBUG|Engine|ProjectManagement|Reading the project from: C:\tmp\Iris_gold\iris.dprep|a4207978-89a1-11e7-89f9-3417ebb653bd
+2017-08-25 10:28:20.3718|DEBUG|Engine|ProjectManagement|Successfully read the project from: C:\tmp\Iris_gold\iris.dprep|a4207978-89a1-11e7-89f9-3417ebb653bd
+2017-08-25 10:28:20.4013|DEBUG|Engine|ProjectManagement|Deleting recovery files: C:\tmp\Iris_gold\iris.dprep.tmp, C:\tmp\Iris_gold\iris.dprep.user.tmp|a4207978-89a1-11e7-89f9-3417ebb653bd
+2017-08-25 10:28:59.1367|DEBUG|Engine|ProjectManagement|Reading the project from: C:\tmp\Iris_gold\iris.dprep|bb4f6e52-89a1-11e7-b939-3417ebb653bd
+2017-08-25 10:28:59.3888|DEBUG|Engine|ProjectManagement|Successfully read the project from: C:\tmp\Iris_gold\iris.dprep|bb4f6e52-89a1-11e7-b939-3417ebb653bd
+2017-08-25 10:28:59.4183|DEBUG|Engine|ProjectManagement|Deleting recovery files: C:\tmp\Iris_gold\iris.dprep.tmp, C:\tmp\Iris_gold\iris.dprep.user.tmp|bb4f6e52-89a1-11e7-b939-3417ebb653bd
+2017-08-25 10:28:59.9665|DEBUG|Engine|ProjectManagement|Deleting recovery files: C:\tmp\Iris_gold\iris.dprep.tmp, C:\tmp\Iris_gold\iris.dprep.user.tmp|bb4f6e52-89a1-11e7-b939-3417ebb653bd
+2017-08-25 10:33:00.1771|DEBUG|Engine|ProjectManagement|Reading the project from: C:\tmp\Iris_gold\iris.dprep|4afc46d8-89a2-11e7-9a4f-3417ebb653bd
+2017-08-25 10:33:00.4191|DEBUG|Engine|ProjectManagement|Successfully read the project from: C:\tmp\Iris_gold\iris.dprep|4afc46d8-89a2-11e7-9a4f-3417ebb653bd
+2017-08-25 10:33:00.4581|DEBUG|Engine|ProjectManagement|Deleting recovery files: C:\tmp\Iris_gold\iris.dprep.tmp, C:\tmp\Iris_gold\iris.dprep.user.tmp|4afc46d8-89a2-11e7-9a4f-3417ebb653bd
+2017-08-25 12:05:25.6434|DEBUG|Engine|ProjectManagement|Reading the project from: C:\tmp\Iris_gold\iris.dprep|345d3490-89af-11e7-86fe-3417ebb653bd
+2017-08-25 12:05:25.8805|DEBUG|Engine|ProjectManagement|Successfully read the project from: C:\tmp\Iris_gold\iris.dprep|345d3490-89af-11e7-86fe-3417ebb653bd
+2017-08-25 12:05:25.9225|DEBUG|Engine|ProjectManagement|Deleting recovery files: C:\tmp\Iris_gold\iris.dprep.tmp, C:\tmp\Iris_gold\iris.dprep.user.tmp|345d3490-89af-11e7-86fe-3417ebb653bd
