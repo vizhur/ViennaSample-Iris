@@ -47,30 +47,7 @@ run_logger.log("Accuracy", accuracy)
 
 print("")
 print("==========================================")
-print("Serialize and deserialize from the relative outputs folder.")
-print("")
-
-# serialize the model on disk in the special 'outputs' folder
-# this folder is tracked in run history, but it does NOT survive across runs.
-print ("Export the model to model.pkl")
-f = open('./outputs/model.pkl', 'wb')
-pickle.dump(clf1, f)
-f.close()
-
-# load the model back from the 'outputs' folder into memory
-print("Import the model from model.pkl")
-f2 = open('./outputs/model.pkl', 'rb')
-clf2 = pickle.load(f2)
-
-# predict a new sample
-X_new = [[3.0, 3.6, 1.3, 0.25]]
-print ('New sample: {}'.format(X_new))
-pred = clf2.predict(X_new)
-print('Predicted class is {}'.format(pred))
-
-print("")
-print("==========================================")
-print("Serialize and deserialize from the native share folder: {0}".format(os.environ['AZUREML_NATIVE_SHARE_DIRECTORY']))
+print("Serialize and deserialize using the native share folder: {0}".format(os.environ['AZUREML_NATIVE_SHARE_DIRECTORY']))
 print("")
 
 # serialize the model on disk in the private share folder. 
@@ -82,11 +59,11 @@ f.close()
 
 # load the model back from the private share folder into memory
 print("Import the model from model.pkl in the native shared folder")
-f3 = open(os.environ['AZUREML_NATIVE_SHARE_DIRECTORY'] + 'model.pkl', 'rb')
-clf3 = pickle.load(f3)
+f2 = open(os.environ['AZUREML_NATIVE_SHARE_DIRECTORY'] + 'model.pkl', 'rb')
+clf2 = pickle.load(f2)
 
 # predict a new sample
 X_new = [[3.0, 3.6, 1.3, 0.25]]
 print ('New sample: {}'.format(X_new))
-pred = clf3.predict(X_new)
+pred = clf2.predict(X_new)
 print('Predicted class is {}'.format(pred))

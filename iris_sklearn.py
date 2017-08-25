@@ -45,6 +45,11 @@ print ("Accuracy is {}".format(accuracy))
 # log accuracy
 run_logger.log("Accuracy", accuracy)
 
+print("")
+print("==========================================")
+print("Serialize and deserialize using the outputs folder.")
+print("")
+
 # serialize the model on disk in the special 'outputs' folder
 print ("Export the model to model.pkl")
 f = open('./outputs/model.pkl', 'wb')
