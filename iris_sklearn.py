@@ -11,14 +11,10 @@ import numpy as np
 from sklearn.metrics import confusion_matrix
 
 from sklearn.linear_model import LogisticRegression
-<<<<<<< HEAD
-from azureml.sdk import data_collector
-=======
 from sklearn.utils import shuffle
 
 from azureml.sdk import data_collector
 from azureml.dataprep.package import run
->>>>>>> 250219b2dcb3e7ac5ee6e4b066403a82d617babc
 
 # initialize the logger
 run_logger = data_collector.current_run() 

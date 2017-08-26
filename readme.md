@@ -1,5 +1,5 @@
 # Classifying Iris
-## This is for daily build test.
+>Note: this sample is for Vienna daily builds
 
 ![cover](./images/cover.png)
 
