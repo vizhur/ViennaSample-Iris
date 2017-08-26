@@ -12,6 +12,7 @@ from sklearn.metrics import confusion_matrix
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.utils import shuffle
+from sklearn.model_selection import train_test_split
 
 from azureml.sdk import data_collector
 from azureml.dataprep.package import run
@@ -32,12 +33,15 @@ print ('Iris dataset shape: {}'.format(iris.shape))
 # load features and labels
 X, Y = iris[['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']].values, iris['Species'].values
 
-# do a random shuffle
-X, Y = shuffle(X, Y)
+# add n more random features to make the problem harder to solve
+# number of new random features to add
+n = 40
+random_state = np.random.RandomState(0)
+n_samples, n_features = X.shape
+X = np.c_[X, random_state.randn(n_samples, n)]
 
-# use 100 samples as training data, and 50 samples as test data
-X_train, Y_train = X[:-50,:], Y[:-50]
-X_test, Y_test = X[-50:,:], Y[-50:]
+# split data 65%-35% into training set and test set
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.35, random_state=0)
 
 # change regularization rate and you will likely get a different accuracy.
 reg = 0.1
@@ -79,8 +83,9 @@ clf2 = pickle.load(f2)
 
 # predict on a new sample
 X_new = [[3.0, 3.6, 1.3, 0.25]]
-print ('New sample: {}'.format(X_new))
-pred = clf2.predict(X_new)
+X_new_with_random_features = np.c_[X_new, random_state.randn(1, n)]
+print ('New sample: {}'.format(X_new_with_random_features))
+pred = clf2.predict(X_new_with_random_features)
 print('Predicted class is {}'.format(pred))
 
 # score the entire test set
