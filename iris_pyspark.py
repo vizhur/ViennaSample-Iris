@@ -26,7 +26,7 @@ print ('****************')
 
 # load iris.csv into Spark dataframe
 data = spark.createDataFrame(pd.read_csv('iris.csv', header=None, names=['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']))
-print("First 20 rows of Iris dataset:")
+print("First 10 rows of Iris dataset:")
 data.show(10)
 
 # vectorize all numerical columns into a single feature column
