@@ -83,8 +83,12 @@ clf2 = pickle.load(f2)
 
 # predict on a new sample
 X_new = [[3.0, 3.6, 1.3, 0.25]]
+print ('New sample: {}'.format(X))
+
+# add random features to match the training data
 X_new_with_random_features = np.c_[X_new, random_state.randn(1, n)]
-print ('New sample: {}'.format(X_new_with_random_features))
+
+# score on the new sample
 pred = clf2.predict(X_new_with_random_features)
 print('Predicted class is {}'.format(pred))
 
