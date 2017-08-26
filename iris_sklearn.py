@@ -3,19 +3,16 @@ import pickle
 import sys
 import os
 
-import matplotlib
-matplotlib.use('agg')
-import matplotlib.pyplot as plt
-
 import numpy as np
 from sklearn.metrics import confusion_matrix
 
 from sklearn.linear_model import LogisticRegression
-from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
 
 from azureml.sdk import data_collector
 from azureml.dataprep.package import run
+
+from iris_plot_lib import plot_iris
 
 # initialize the logger
 run_logger = data_collector.current_run() 
@@ -83,7 +80,7 @@ clf2 = pickle.load(f2)
 
 # predict on a new sample
 X_new = [[3.0, 3.6, 1.3, 0.25]]
-print ('New sample: {}'.format(X))
+print ('New sample: {}'.format(X_new))
 
 # add random features to match the training data
 X_new_with_random_features = np.c_[X_new, random_state.randn(1, n)]
@@ -92,25 +89,6 @@ X_new_with_random_features = np.c_[X_new, random_state.randn(1, n)]
 pred = clf2.predict(X_new_with_random_features)
 print('Predicted class is {}'.format(pred))
 
-# score the entire test set
-Y_hat = clf1.predict(X)
-
-# create a confusion matrix
-labels = ['Iris-virginica', 'Iris-versicolor', 'Iris-setosa']
-cm = confusion_matrix(Y, Y_hat, labels)
-
-# plot the confusion matrix
-print("Plot the confusion matrix:")
-print(cm)
-
-fig = plt.figure(figsize=(6,4), dpi=75)
-plt.imshow(cm, interpolation="nearest", cmap=plt.cm.Reds)
-plt.colorbar()
-tick_marks = np.arange(len(labels))
-plt.xticks(tick_marks, labels, rotation=45)
-plt.yticks(tick_marks, labels)
-plt.xlabel("Predicted Species")
-plt.ylabel("True Species")
-fig.savefig('./outputs/cm.png', bbox_inches='tight')
-
-print("Confusion matrix saved in an image file. Please check Run History details page.")
+# plot confusion matrix and ROC curve
+plot_iris(clf1, X, Y)
+print("Confusion matrix and ROC curve plotted. See them in Run History details page.")
