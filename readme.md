@@ -1,5 +1,4 @@
 # Classifying Iris
-## This is for daily build test.
 
 ![cover](./images/cover.png)
 
