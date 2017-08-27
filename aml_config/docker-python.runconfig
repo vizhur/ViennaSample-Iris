@@ -6,7 +6,7 @@
   "CondaFile":null,
   "ManagedEnvironment":true,
   "TrackedRun":true,
-  "Target":"docker",
+  "Target":"docker-python",
   "PrepareEnvironment":true,
   "Framework":"Python"
 }
