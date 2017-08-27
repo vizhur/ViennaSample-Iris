@@ -24,7 +24,12 @@ $ az ml execute start -c local iris_sklearn.py
 
 Run _iris_sklearn.py_ in a local Docker container.
 ```
-$ az ml execute start -c docker iris_sklearn.py
+$ az ml execute start -c docker-python iris_sklearn.py
+```
+
+Run _iris_pyspark.py_ in a local Docker container.
+```
+$ az ml execute start -c docker-spark iris_pyspark.py
 ```
 
 Create _myvm.compute_ file to point to a remote VM
