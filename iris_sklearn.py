@@ -41,7 +41,7 @@ X = np.c_[X, random_state.randn(n_samples, n)]
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.35, random_state=0)
 
 # change regularization rate and you will likely get a different accuracy.
-reg = 0.1
+reg = 0.01
 # load regularization rate from argument if present
 if len(sys.argv) > 1:
     reg = float(sys.argv[1])
