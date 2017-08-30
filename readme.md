@@ -19,27 +19,27 @@ $ python run.py
 
 Run _iris_sklearn.py_ in local environment.
 ```
-$ az ml execute start -c local iris_sklearn.py
+$ az ml experiment submit -c local iris_sklearn.py
 ```
 
 Run _iris_sklearn.py_ in a local Docker container.
 ```
-$ az ml execute start -c docker-python iris_sklearn.py
+$ az ml experiment submit -c docker-python iris_sklearn.py
 ```
 
 Run _iris_pyspark.py_ in a local Docker container.
 ```
-$ az ml execute start -c docker-spark iris_pyspark.py
+$ az ml experiment submit -c docker-spark iris_pyspark.py
 ```
 
 Create _myvm.compute_ file to point to a remote VM
 ```
-$ az ml computecontext attach --name <myvm> --address <ip address or FQDN> --username <username> --password <pwd>
+$ az ml computetarget attach --name <myvm> --address <ip address or FQDN> --username <username> --password <pwd>
 ```
 
 Run _iris_pyspark.py_ in a Docker container (with Spark) in a remote VM:
 ```
-$ az ml execute start -c myvm iris_pyspark.py
+$ az ml experiment submit -c myvm iris_pyspark.py
 ```
 
 Create _myhdi.compute_ to point to an HDI cluster
@@ -49,5 +49,5 @@ $ az ml computecontext attach --name <myhdi> --address <ip address or FQDN of th
 
 Run it in a remote HDInsight cluster:
 ```
-$ az ml execute start -c myhdi iris_pyspark.py
+$ az ml experiment submit -c myhdi iris_pyspark.py
 ```
