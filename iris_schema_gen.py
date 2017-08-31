@@ -19,7 +19,7 @@ def init():
 def run(input_df):
     import json
     
-    # append 40 random features as the training script does.
+    # append 40 random features just like the training script does it.
     import numpy as np
     n = 40
     random_state = np.random.RandomState(0)
