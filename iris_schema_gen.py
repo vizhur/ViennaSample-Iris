@@ -14,7 +14,7 @@ def init():
 
     # load the model file
     global model
-    model = joblib.load('./outputs/model.pkl')
+    model = joblib.load('model.pkl')
 
 def run(input_df):
     import json
